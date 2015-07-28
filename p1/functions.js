@@ -72,38 +72,22 @@ var isConsonant = function(ch){
 
 //project 1, req 2-F
 
-var countVowelPrefixWords = function(string){
-	var arr = string.split(' ');
-	var position = (0,1);
-	if (arr[position] = /[aeiouy]/i){
-		count(arr[position])
-	}
-
-	return count;
-
-}
-
-
-function CountVowelPrefixWords(sent){
+var countVowelPrefixWords = function(sent){
 	var count = 0;
-	var words = sent.split(" ");
+	var words = sent.split(' ');
 
-for (var i=0; i<words.length; ++i)
-	if(isVowel(word[0])
-		&&
-	isVowel(word[1]))
-	++count;
-
-return count
-
-
+	for(var i=0; i<words.length; ++i){
+		if(startsWithTwoVowels(words[i]))
+			++count;
+	}
+	return count;
 }
 
-function startsWithTwoVowels
-for (var i=0; i<words.length; ++i)
+function startsWithTwoVowels(W){
+	return(isVowel(W[0]) && isVowel(W[1]));
+}
 
-	if(isVowel(word[0])
-		&&
-	isVowel(word[1]))
-	++count;
-};
+var isVowel = function(ch){
+	var vowels = /[aeiou]/i;
+	return vowels.test(ch);
+}
